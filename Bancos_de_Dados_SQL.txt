@@ -1,0 +1,53 @@
+Banco de dados relacional
+
+Um Banco de Dados composto por tabelas, tabelas são compostas por colunas
+e colunas possuem linhas(tuplas) que são os registros. O relacionamento entre essas
+tabelas é composto por chaves primarias e chaves estrangeiras.
+
+C - Create
+R - READ
+U - .UPDATE
+D - DELETE
+
+Características
+
+- Relacionamento entre tabelas
+- Linguagem de consulta Estruturada (SQL)
+- Integridade referencial
+- Normalização de dados
+- Segurança
+- Flexibilidade e Extensibilidade
+- Suporte a transações ACID
+
+Transações ACID
+
+- Conjunto de propriedade de um banco de dado relacional, que garante que as transações sejam executadas
+de forma segura e confiável. Para que as informações permaneçam sempre consistentes.
+
+A - Atomicidade - Todos as operações sejam executadas com sucesso ou nenhuma seja executada.
+C - Consistência - Garantia de sair de um estado consistente para outro estado consistente.
+I - Isolamento - Cada transações é executada de forma isolada sem interferir nas transações concorrentes.
+D - Durabilidade - Uma vez que a transação é confirmada, essa alteração de informações é permanente.
+
+Organização do SQL
+
+- DQL - Linguagem de Consulta de Dados
+ - SELECT
+- DML - Linguagem de Manipulação de Dados
+ - INSERT, UPDATE e DELETE
+- DDL - Linguagem de definição de Dados
+ - CREATE, ALTER, DROP
+- DCL - Linguagem de Controle de Dados
+ - GRANT, REVOKE
+- DTL - Linguagem de Transações de Dados
+ - BEGIN, COMMIT, ROLLBACK
+
+ MER e DER - Modelagem de Banco de Dados
+
+ MER - Modelo de ENTIDADE-RELACIONAMENTO é representado através de diagramas chamados Diagramas ENTIDADE-RELACIONAMENTO (DER)
+    Modelo conceitual usado para representar a estrutura geral do banco de dados, descreve as entidades, atributos e relacionamentos, sem entrar em muitos detalhes de implementação
+
+DER - Representação gráfica desse modelo com símbolos e convenções pra representar a estidades, atributos, relacionamentos e cardinalidades dos relacionamentos.
+
+
+
