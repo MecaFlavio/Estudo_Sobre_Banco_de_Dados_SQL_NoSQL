@@ -42,12 +42,24 @@ Organização do SQL
 - DTL - Linguagem de Transações de Dados
  - BEGIN, COMMIT, ROLLBACK
 
- MER e DER - Modelagem de Banco de Dados
+ MER e DER - Modelagem de Banco de Dados Relacionais
 
- MER - Modelo de ENTIDADE-RELACIONAMENTO é representado através de diagramas chamados Diagramas ENTIDADE-RELACIONAMENTO (DER)
-    Modelo conceitual usado para representar a estrutura geral do banco de dados, descreve as entidades, atributos e relacionamentos, sem entrar em muitos detalhes de implementação
+ MER - MODELO de ENTIDADE-RELACIONAMENTO é representado através de diagramas chamados Diagramas ENTIDADE-RELACIONAMENTO (DER)
+    Modelo conceitual usado para representar a estrutura geral do banco de dados, descreve as entidades, atributos e relacionamentos, sem entrar em muitos detalhes de implementação.
 
-DER - Representação gráfica desse modelo com símbolos e convenções pra representar a estidades, atributos, relacionamentos e cardinalidades dos relacionamentos.
+DER - Representação gráfica desse modelo (MER) com símbolos e convenções pra representar a estidades, atributos, relacionamentos e cardinalidades dos relacionamentos.
 
+Entidade - Representação das tabelas -  Nomeadas sempre com substantivos concretos ou abstratos que representam de forma clara sua função do sistema
+    - Representada por retângulos
 
+Atributos - características ou propriedades das entidades
+    - Representadas por Elipses ou por "Blocos" abaixo da Entidade - Anotação da UML
 
+Relacionamentos - Os relacionamentos representam as associações entre entidades
+    - Representadas por losangos com linhas ligadas e com nome do que esse relacionamento realiza
+
+Cardinalidade - Forma como as entidades se relacionam umas com as outras indica o numero máximo de instancias ou ocorrências que temos de uma entidade com outra
+    - Relacionamento 1..1 (um para um)
+    - Relacionamento 1..n ou 1..* (um para muitos)
+    - Relacionamento n..n ou *..*(muitos para muitos)
+    - Relacionamento 0,n (relacionamento não obrigatório)
