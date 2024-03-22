@@ -63,3 +63,78 @@ Cardinalidade - Forma como as entidades se relacionam umas com as outras indica 
     - Relacionamento 1..n ou 1..* (um para muitos)
     - Relacionamento n..n ou *..*(muitos para muitos)
     - Relacionamento 0,n (relacionamento não obrigatório)
+
+Estrutura do comando INSERT:
+
+INSERT INTO /*Clausula obrigatória*/
+
+    {{nome-tabela}}
+
+    ([coluna1,coluna2,...]) /*Pode ocultar os nomes das colunas*/
+
+VALUES
+
+    ([valor-coluna1, valor-coluna2,...])
+
+Estrutura do Comando: SELECT
+
+SELECT (lista_colunas)  ou *  que seleciona todas as colunas
+
+FROM tabela;
+
+Estrutura do SELECT com WHERE
+
+SELECT (lista_colunas)
+
+FROM tabela
+
+WHERE(condição)
+
+#condições:
+    = igualdade
+    <> ou != desigualdade
+    > maior que
+    < menor que
+    >= maior ou igual que
+    <= menor ou igual que
+    LIKE comparação de padrões
+    IN pertence a uma lista de valores
+    BETWEEN dentro de um intervalo
+    AND e lógico
+    OR ou lógico
+
+Estrutura de comando UPDATE
+
+UPDATE (tabela)
+
+SET 
+
+    (coluna_1) = (novo_valor_1),
+    (coluna_2) = (novo_valor_2)
+
+WHERE
+    (condição);
+
+Estrutura de comando DELETE
+
+DELETE FROM
+    
+    (tabela)
+
+WHERE
+    (condição)
+
+
+Alterando e excluindo tabelas
+
+DROP TABLE - remove tabela de forma permanente
+
+    DROP TABLE (nome_tabela);
+
+ALTER TABLE - modifica a estrutura de uma tabela existente
+    permite:
+        adicionar, alterar ou excluir colunas
+        modificar as restrições, indices
+        renomear a tabela entre outras alterações
+
+
