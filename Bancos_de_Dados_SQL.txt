@@ -137,4 +137,93 @@ ALTER TABLE - modifica a estrutura de uma tabela existente
         modificar as restrições, indices
         renomear a tabela entre outras alterações
 
+Chaves Primárias - É um atributo ou um conjunto de atributos que identifica, de forma exclusiva, cada registro da tabela
+Garantir a Integridade dos dados, impede a duplicação de registros e sempre ajuda na recuperação eficiente dessa informação.
+    - identifica exclusivamente
+    - Não pode conter valores nulos (NULL)
+    - Uma tabela pode ter apenas uma chave Primárias
 
+Criação de chaves Primárias
+
+- Momento de criação da tabela
+
+    CREATE TABLE {{nome_tabela}} (
+        id INT PRIMARY KEY AUTOINCREMENT,
+        ...);
+
+- Tabela ja criada sem Primary KEY
+
+    ALTER TABLE {{nome_tabela}}
+    MODIFY COLUMN id INT PRIMARY KEY;
+
+Chaves Estrangeiras - é responsável por estabelecer a relação com outras tabelas,
+    - pode ser nula (NULL)
+    - é possível ter mais de uma em uma Tabela
+
+Criação de chaves estrangeiras
+
+- Momento da criação da tabela
+
+    CREATE TABLE {{nome_tabela}}(
+        id INT PRIMARY KEY AUTOINCREMENT
+        chave_estrangeira INT,
+        FOREING KEY (chave_estrangeira) REFERENCES {{outra_tabela}}(id)
+    );
+
+- Tabela ja criada
+
+    ALTER TABLE {{nome_tabela}}
+    ADD CONSTRAINT {{nome_constraint}}
+    FOREING KEY (id)
+    REFERENCES{{outra_tabela}}(id)
+
+- Restrições
+
+    - ON DELETE: Especifica o que acontece com os registros dependentes quando um registro pai é excluído.
+    - ON UPDATE: Define o comportamento dos registros dependentes quando um registro pai é atualizado
+    - CASCADE, SET NULL, SET DEFAULT RESTRICT
+
+Normalização de Dados
+    É um processo no qual se organiza e estrutura um banco de Dados relacional de forma a eliminar redundâncias
+    e anomalias, garantindo a consistência e integridade dos dados
+
+Formas Normais - 1º Forma normal - 1FN
+    Cada valor em uma tabela deve ser indivisível. Nenhum campo deve conter múltiplos valores ou listas.
+
+Exemplo 1FN utilizando o comando SUBSTRING_INDEX na tabela endereco para separar em colunas diferentes
+os dados do endereco do usuário
+
+update viagem.usuarios
+set rua = substring_index(substring_index(endereco,',',1),',',-1),
+	numero = substring_index(substring_index(endereco,',',2),',',-1),
+    cidade = substring_index(substring_index(endereco,',',3),',',-1),
+    estado = substring_index(endereco,',',-1);
+
+ALTER TABLE viagem.usuarios
+DROP COLUMN endereco;
+
+Formas Normais - Segunda Forma Normal - 2FN
+    A 2FN estabelece que uma tabela deve estar na 1FN.
+    Todos os atributos não chave devem depender totalmente da chave primária.
+    * Se a chave primária é simples possivelmente a tabela ja se encontra na 2FN
+
+Formas Normais - Terceira Forma Normal - 3FN
+    Uma tabela deve estar na 2FN
+    Nenhuma coluna não-chave depender de outra coluna não-chave.
+
+CONSULTAS COM JUNÇÕES e SUBCONSULTAS
+
+JUNÇÕES - JOINS
+    São usadas no SQL para combinar dados de duas ou mais tabelas relacionadas em uma única consulta
+
+    - INNER JOIN
+    - LEFT JOIN ou LEFT OUTER JOIN
+    - RIGHT JOIN ou RIGHT OUTER JOIN
+    - FULL JOIN ou FULL OUTER JOIN
+
+    --INNER JOIN
+        Retorna apenas as linhas que têm correspondência em ambas as tabelas envolvidas na junção. A junção é
+        feita com base em uma condição de igualdade especificada na cláusula ON.
+        ex:
+        SELECT * FROM tabela1
+        INNER JOIN tabela2 ON tabla1.coluna = tabela2.coluna;
